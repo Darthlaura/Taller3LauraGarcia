@@ -1,0 +1,58 @@
+package logica;
+
+import java.util.*;
+import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import dominio.*;
+
+
+public class LectorArchivo {
+	
+	
+	
+	public static void leerArchivoMago(String nombreArchivo)  throws FileNotFoundException  { 
+		
+		ArrayList<Mago> listaMago = new ArrayList<Mago>(); 
+		File archivo = new File(nombreArchivo); 
+		Scanner lectura = new Scanner(archivo); 
+		
+		while(lectura.hasNextLine() ) {
+			String linea = lectura.nextLine(); 
+			String[] partes1 = linea.split(";");
+			String nombreMago=partes1[0]; 
+			String lineaHechizo = partes1[1]; 
+			//separar hechizo 
+			String[] partes2 = lineaHechizo.split("\\|"); 
+			
+			ArrayList<Hechizo> hechizosLectura = new ArrayList<Hechizo>();
+			for(int i=0; i< partes2.length; i++) {
+				String tipoHechizo = partes2[i];
+				hechizosLectura.add(tipoHechizo);
+				
+			}
+			Mago magolectura = new Mago(nombreMago, hechizosLectura); 
+			
+		
+			
+			
+			
+		}
+		
+		
+		public static Hechizo buscarPorHechizo(String nombreHechizo, ArrayList<Hechizo> hechizosLectura) {
+			
+			for(int i =0; i< hechizosLectura.)
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

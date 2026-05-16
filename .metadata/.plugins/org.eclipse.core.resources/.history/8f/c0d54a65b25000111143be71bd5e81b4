@@ -1,0 +1,18 @@
+package dominio;
+
+public class HechizoFuego {
+	
+	private int duracionQuemadura;
+
+	public HechizoFuego(int duracionQuemadura) {
+		super();
+		this.duracionQuemadura = duracionQuemadura;
+	}
+
+	public int getDuracionQuemadura() {
+		return duracionQuemadura;
+	} 
+	
+	
+
+}
