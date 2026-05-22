@@ -1,3 +1,6 @@
+//Autor: Laura Garcia
+//rut : 26427429-k
+//paracelo C2 
 package dominio;
 
 public class HechizoFuego extends Hechizo {
@@ -16,11 +19,24 @@ public class HechizoFuego extends Hechizo {
 		return duracionQuemadura;
 	} 
 	
-	@Override
+
 	public int calcularPuntuacion() {
 		int total;
 		total =((getDano() * duracionQuemadura));
 		return total;
+	}
+
+
+
+	public void setDuracionQuemadura(int duracionQuemadura) {
+		this.duracionQuemadura = duracionQuemadura;
+	}
+
+
+
+	@Override
+	public String formatoArchivo() {
+		return getNombreHechizo() + ";" + getTipo() + ";" + getDano() + ";" + getDuracionQuemadura(); 
 	}
 
 }

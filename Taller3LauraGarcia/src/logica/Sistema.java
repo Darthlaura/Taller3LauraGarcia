@@ -1,26 +1,52 @@
+//Autor: Laura Garcia
+//rut : 26427429-k
+//paracelo C2 
 package logica;
 
 import java.util.Scanner;
 import java.util.*;
 
+import dominio.*;
 public class Sistema {
 	
 	/**
 	 * 
 	 * @param teclado
 	 */
-	public static void mostrarMenuPrincipal(Scanner teclado) {
+	
+	
+	public static void iniciarSistema() {
+		
+		
+		Scanner teclado = new Scanner(System.in); 
+		try {
+			
+			ArrayList<Hechizo> listaHechizos = LectorArchivo.leerarchivoHechizos("Hechizos.txt");
+			ArrayList<Mago> listaMagos = LectorArchivo.leerArchivoMago("Magos.txt", listaHechizos); 
+			Administrador administrador = new AdministradoImple(listaMagos, listaHechizos);
+			Analista analista = new AnalistaImple(listaMagos, listaHechizos);
+			mostrarMenuPrincipal(teclado, administrador,analista);
+			 
+		}catch (Exception e) {
+			System.out.println("Error al iniciar el sistema");
+			e.printStackTrace();
+		}
+		teclado.close();
+	}
+	
+	
+	public static void mostrarMenuPrincipal(Scanner teclado, Administrador administrado, Analista analista) {
 		int retornoValidacion;
 		boolean continuar = true;
 		while (continuar) {
 			retornoValidacion = retornoValidacionMenuPrincipal(teclado);
 			switch (retornoValidacion) {
 			case 1: {
-				mostrarMenuPrincipalAministrador(teclado);
+				mostrarMenuPrincipalAministrador(teclado, administrado);
 				break;
 			}
 			case 2: {
-				mostrarMenuPrincipalAministrador(teclado);
+				mostrarMenuPrincipalAnalista(teclado,analista);
 				break;
 			}
 			case 3: {
@@ -63,7 +89,7 @@ public class Sistema {
 	 * 
 	 * @param teclado
 	 */
-	public static void mostrarMenuPrincipalAministrador(Scanner teclado) {
+	public static void mostrarMenuPrincipalAministrador(Scanner teclado, Administrador administrador) {
 		int opcion;
 		boolean continuar = true;
 
@@ -73,32 +99,37 @@ public class Sistema {
 			case 1: {
 
 				System.out.println("Ingresar Mago");
+				administrador.agregarMago();
 				continuar = true;
 				break;
 			}
 			case 2: {
-				System.out.println("Modificasr Mago");
+				System.out.println("Modificar Mago");
+				administrador.modificarMago();
 				continuar = true;
 				break;
 			}
 			case 3: {
 				System.out.println("Eliminar Mago");
+				administrador.eliminarMago();
 				continuar = true;
 				break;
 			}
 			case 4: {
 				System.out.println("Agregar Hechizo");
-
+                administrador.agregarHechizo();
 				continuar = true;
 				break;
 			}
 			case 5: {
 				System.out.println("Modificar Hechizo");
+				administrador.modificarHechizo();
 				continuar = true;
 				break;
 			}
 			case 6: {
 				System.out.println("Eliminar Hechizo");
+				administrador.eliminarHechizo();
 				continuar = true;
 				break;
 			}
@@ -153,7 +184,7 @@ public class Sistema {
 	 * 
 	 * @param teclado
 	 */
-	public static void mostrarMenuPrincipalAnalista(Scanner teclado) {
+	public static void mostrarMenuPrincipalAnalista(Scanner teclado, Analista analista) {
 		int opcion;
 		boolean continuar = true;
 
@@ -163,32 +194,38 @@ public class Sistema {
 			case 1: {
 
 				System.out.println("Top 10 Mejores Hechizos");
+				analista.mostrarTop10Hechizos();
 				continuar = true;
 				break;
 			}
 			case 2: {
 				System.out.println(" Top 3 Mejores Magos");
+				analista.mostrarTop3Magos();
 				continuar = true;
 				break;
 			}
 			case 3: {
 				System.out.println("Mostrar todos los Hechizos");
+				analista.mostrarTodosLosHechizos();
 				continuar = true;
 				break;
 			}
 			case 4: {
 				System.out.println("Mostrar todos los magos");
+				analista.mostrarTodosLosMagos();
 
 				continuar = true;
 				break;
 			}
 			case 5: {
 				System.out.println("Mostrar todos los Hechizos junto a su puntuacion");
+				analista.mostrarHechizosConPuntuacion();
 				continuar = true;
 				break;
 			}
 			case 6: {
 				System.out.println("Mostrar todos los magos junto a su puntuacion");
+				analista.mostrarMagosConPuntuaciones();
 				continuar = true;
 				break;
 			}

@@ -1,10 +1,12 @@
+//Autor: Laura Garcia
+//rut : 26427429-k
+//paracelo C2 
 package logica;
 
 import java.util.*;
-import java.io.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
+
 
 import dominio.*;
 

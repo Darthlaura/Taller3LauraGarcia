@@ -1,3 +1,6 @@
+//Autor: Laura Garcia
+//rut : 26427429-k
+//paracelo C2 
 package dominio;
 
 public class HechizoAgua extends Hechizo {
@@ -19,10 +22,28 @@ public class HechizoAgua extends Hechizo {
 		return presionAgua;
 	}
 
-	@Override
+	
 	public int calcularPuntuacion() {
 		int total = ((getDano() + cantidadHeal + presionAgua) * 2);
 		return total;
 	}
 
+	public void setCantidadHeal(int cantidadHeal) {
+		this.cantidadHeal = cantidadHeal;
+	}
+
+	public void setPresionAgua(int presionAgua) {
+		this.presionAgua = presionAgua;
+	}
+
+	
+	@Override
+	public String formatoArchivo() {
+	
+			return getNombreHechizo() + ";" + getTipo() + ";" + getDano() + ";" + getCantidadHeal()+ "," +presionAgua;
+	
+	}
+
+	
+	
 }

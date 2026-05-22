@@ -1,3 +1,6 @@
+//Autor: Laura Garcia
+//rut : 26427429-k
+//paracelo C2 
 package dominio;
 
 public class HechizoTierra extends Hechizo {
@@ -12,11 +15,20 @@ public class HechizoTierra extends Hechizo {
 		return mejoraDefensa;
 	}
 
-	@Override
+	
 	public int calcularPuntuacion() {
 		int total;
 		total=((getDano()*mejoraDefensa)/2);
 		return total;
+	}
+
+	public void setMejoraDefensa(int mejoraDefensa) {
+		this.mejoraDefensa = mejoraDefensa;
+	}
+
+	@Override
+	public String formatoArchivo() {
+		return getNombreHechizo() + ";" + getTipo() + ";" + getDano() + ";" + getMejoraDefensa();
 	} 
 	
 	

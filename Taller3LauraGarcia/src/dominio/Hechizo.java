@@ -1,3 +1,7 @@
+//Autor: Laura Garcia
+//rut : 26427429-k
+//paracelo C2 
+
 package dominio;
 
 public abstract class Hechizo {
@@ -30,9 +34,33 @@ public abstract class Hechizo {
 	
 	
 	
+	public void setNombreHechizo(String nombreHechizo) {
+		this.nombreHechizo = nombreHechizo;
+	}
+
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+
+	public void setDano(int dano) {
+		this.dano = dano;
+	}
+    
+
+	@Override
+	public String toString() {
+		
+		return "Hechizo: " + nombreHechizo + ", tipo: (" + tipo + ")";
+	}
+
+
 	public abstract int calcularPuntuacion();
 		
 		
+	public abstract String formatoArchivo();
+	
 	}
 	
 	

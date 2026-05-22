@@ -1,14 +1,16 @@
+//Autor: Laura Garcia
+//rut : 26427429-k
+//paracelo C2 
 package logica;
 
-import java.util.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Scanner teclado = new Scanner(System.in);
-		Sistema.mostrarMenuPrincipal(teclado);
+	   Sistema.iniciarSistema();
+		
 
 	}
 
