@@ -1,354 +1,108 @@
-\# Taller 3 - Programación Orientada a Objetos
+# Taller 3 - Sistema de Gestión de Magia
 
+## Autor
 
+* Laura García
+* RUT: 26.427.429-K
+* Paralelo: C2
 
-Repositorio correspondiente al Taller 3 de Programación Orientada a Objetos.
+## Descripción
 
+Este proyecto corresponde al desarrollo de un sistema de gestión de magia realizado en Java utilizando Programación Orientada a Objetos.
 
+El sistema permite administrar magos y hechizos, además de realizar consultas y análisis sobre la información almacenada.
 
-\## Integrante
+La información es persistida mediante archivos de texto, permitiendo mantener los datos entre ejecuciones, En este taller utilicé Lenguaje regular "Regex" aprendido en la clase de ciencia de datos para validar de manera correcta la entrada de caracteres. 
 
+## Funcionalidades
 
+### Módulo Administrador
 
-\- Laura García; rut 26427429-k
+* Agregar magos.
+* Modificar magos.
+* Eliminar magos.
+* Agregar hechizos.
+* Modificar hechizos.
+* Eliminar hechizos.
 
+### Módulo Analista
 
+* Mostrar Top 10 de hechizos con mayor puntuación.
+* Mostrar Top 3 de magos con mayor puntuación.
+* Mostrar todos los hechizos.
+* Mostrar todos los magos.
+* Mostrar hechizos junto a su puntuación.
+* Mostrar magos junto a su puntuación.
 
-\## Descripción general
+## Tipos de Hechizos
 
+El sistema considera los siguientes tipos de hechizos:
 
+* Hechizo Agua
+* Hechizo Fuego
+* Hechizo Tierra
+* Hechizo Planta
 
-Este proyecto desarrolla un sistema basado en magos y hechizos.
+Cada tipo de hechizo implementa su propia fórmula de cálculo de puntuación mediante herencia y polimorfismo.
 
+## Conceptos de POO Utilizados
 
+* Encapsulamiento
+* Herencia
+* Polimorfismo
+* Clases abstractas
+* Interfaces
+* Colecciones ArrayList
+* Lectura y escritura de archivos
+* UML
+* JavaDoc
 
-Cada mago puede dominar uno o varios hechizos. Cada hechizo pertenece a un tipo específico:
+## Estructura del Proyecto
 
+### Package dominio
 
+Contiene las entidades principales del sistema:
 
-\- Agua
+* Mago
+* Hechizo
+* HechizoAgua
+* HechizoFuego
+* HechizoTierra
+* HechizoPlanta
 
-\- Fuego
+### Package logica
 
-\- Tierra
+Contiene la lógica de negocio:
 
-\- Planta
+* Sistema
+* Administrador
+* AdministradoImple
+* Analista
+* AnalistaImple
+* LectorArchivo
+* EscritorArchivo
+* Main
 
+## Archivos Utilizados
 
+* Magos.txt
+* Hechizos.txt
 
-El sistema utiliza Programación Orientada a Objetos, aplicando separación por paquetes, herencia, clases abstractas, interfaces, lectura de archivos y escritura de archivos.
+## Diagramas
 
+El proyecto incluye:
 
+* Diagrama UML
+* Diagrama de Dominio
 
-\## Estructura del proyecto
+## Documentación
 
+El proyecto se encuentra documentado mediante JavaDoc en las clases y métodos principales.
 
+## Ejecución
 
-El proyecto está dividido principalmente en dos paquetes:
+Ejecutar la clase:
 
+Main.java
 
-
-```text
-
-src/
-
-&#x20;├── dominio/
-
-&#x20;└── logica/
-
-```
-
-
-
-\## Paquete dominio
-
-
-
-En este paquete se encuentran las clases que representan las entidades principales del problema.
-
-
-
-\### Clase Hechizo
-
-
-
-Clase abstracta que representa un hechizo general.
-
-
-
-Contiene los datos comunes de todos los hechizos:
-
-
-
-\- nombre del hechizo
-
-\- tipo
-
-\- daño
-
-
-
-De esta clase heredan los distintos tipos de hechizos.
-
-
-
-\### Clase HechizoAgua
-
-
-
-Clase hija de Hechizo.
-
-
-
-Representa los hechizos de tipo Agua.
-
-
-
-\### Clase HechizoFuego
-
-
-
-Clase hija de Hechizo.
-
-
-
-Representa los hechizos de tipo Fuego.
-
-
-
-\### Clase HechizoTierra
-
-
-
-Clase hija de Hechizo.
-
-
-
-Representa los hechizos de tipo Tierra.
-
-
-
-\### Clase HechizoPlanta
-
-
-
-Clase hija de Hechizo.
-
-
-
-Representa los hechizos de tipo Planta.
-
-
-
-\### Clase Mago
-
-
-
-Representa a un mago dentro del sistema.
-
-
-
-Cada mago posee una lista de hechizos que domina.
-
-
-
-\## Paquete logica
-
-
-
-En este paquete se encuentran las clases encargadas de manejar la lógica del sistema.
-
-
-
-\### Clase LectorArchivo
-
-
-
-Clase encargada de leer los archivos de texto del proyecto.
-
-
-
-Actualmente se trabaja en la lectura de:
-
-
-
-\- archivo de hechizos
-
-\- archivo de magos
-
-
-
-\### Clase EscritorArchivo
-
-
-
-Clase pensada para guardar los cambios realizados en los archivos de texto.
-
-
-
-Será utilizada para reflejar las operaciones de agregar, modificar o eliminar datos.
-
-
-
-\### Interface Administrador
-
-
-
-Interface que define las operaciones principales del panel administrador.
-
-
-
-Incluye acciones como:
-
-
-
-\- agregar mago
-
-\- modificar mago
-
-\- eliminar mago
-
-\- agregar hechizo
-
-\- modificar hechizo
-
-\- eliminar hechizo
-
-
-
-\### Clase AdministradorImpl
-
-
-
-Clase que implementa la interface Administrador.
-
-
-
-Aquí se desarrollará la lógica concreta de las operaciones administrativas.
-
-
-
-\### Clase Analista
-
-
-
-Clase pensada para generar los reportes del sistema.
-
-
-
-Entre sus responsabilidades estarán:
-
-
-
-\- mostrar todos los hechizos
-
-\- mostrar todos los magos
-
-\- calcular ranking de hechizos
-
-\- calcular ranking de magos
-
-\- mostrar hechizos con su puntuación
-
-\- mostrar magos con su puntuación
-
-
-
-\### Clase Sistema
-
-
-
-Clase encargada de coordinar el funcionamiento general del programa.
-
-
-
-El objetivo es que el Main quede simple y que la lógica principal se maneje desde esta clase.
-
-
-
-\## Conceptos de POO utilizados
-
-
-
-En este proyecto se utilizarán los siguientes conceptos:
-
-
-
-\- clases y objetos
-
-\- encapsulamiento
-
-\- herencia
-
-\- clase abstracta
-
-\- interfaces
-
-\- polimorfismo
-
-\- ArrayList
-
-\- lectura de archivos
-
-\- escritura de archivos
-
-\- separación por paquetes
-
-
-
-\## Estado actual del proyecto
-
-
-
-Actualmente el proyecto cuenta con:
-
-
-
-\- creación de paquetes dominio y logica
-
-\- diseño inicial de las clases principales
-
-\- clase abstracta Hechizo
-
-\- clases hijas para los tipos de hechizo
-
-\- clase Mago
-
-\- lectura inicial de archivos
-
-\- estructura inicial para administrador, analista y sistema
-
-
-
-\## Pendiente
-
-
-
-\- completar la lectura de hechizos
-
-\- completar la lectura de magos
-
-\- relacionar los magos con sus hechizos correspondientes
-
-\- implementar cálculo de puntuaciones
-
-\- implementar panel administrador
-
-\- implementar panel analista
-
-\- implementar escritura de archivos
-
-\- crear modelo de dominio en PDF
-
-\- crear diagrama de clases en PDF
-
-
-
-\## Estado
-
-
-
-Proyecto en desarrollo.
-
-
-
+Desde esta clase se inicia el sistema y se despliegan los distintos menús disponibles.
