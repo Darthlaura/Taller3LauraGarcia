@@ -9,12 +9,9 @@ import java.util.*;
 import dominio.*;
 public class Sistema {
 	
-	/**
-	 * 
-	 * @param teclado
-	 */
-	
-	
+    /**
+     * Metodo para inicar el sistema en el main  
+     */
 	public static void iniciarSistema() {
 		
 		
@@ -34,7 +31,12 @@ public class Sistema {
 		teclado.close();
 	}
 	
-	
+	/**
+	 * Metodo para mostrar el menu principal, sera usado en el metodo de inicar el sistema 
+	 * @param teclado
+	 * @param administrado
+	 * @param analista
+	 */
 	public static void mostrarMenuPrincipal(Scanner teclado, Administrador administrado, Analista analista) {
 		int retornoValidacion;
 		boolean continuar = true;
@@ -63,7 +65,7 @@ public class Sistema {
 	}
 
 	/**
-	 * 
+	 * Metodo para retornar una opcion valida para el menu principal
 	 * @param teclado
 	 * @return
 	 */
@@ -86,7 +88,7 @@ public class Sistema {
 	}
 
 	/**
-	 * 
+	 * Metodo para mostrar el menu principal del administrador
 	 * @param teclado
 	 */
 	public static void mostrarMenuPrincipalAministrador(Scanner teclado, Administrador administrador) {

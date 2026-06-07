@@ -16,7 +16,9 @@ public class AnalistaImple implements Analista {
 		this.listaMagos = listaMagos;
 		this.listaHechizos = listaHechizos;
 	}
-
+    /**
+     * Metodo para mostrar los 10 mejores hechizos 
+     */
 	@Override
 	public void mostrarTop10Hechizos() {
 		// ordenar y copiarHechizos por puntuacion
@@ -37,7 +39,9 @@ public class AnalistaImple implements Analista {
 		}
 
 	}
-
+    /**
+     * Metodo para mostrar los 3 mejores magos
+     */
 	@Override
 	public void mostrarTop3Magos() {
 		System.out.println("Mostrando el top 3 de los mejores magos");
@@ -56,7 +60,9 @@ public class AnalistaImple implements Analista {
 		}
 
 	}
-
+    /**
+     * Metodo para mostrar la lista de todos los hechizos 
+     */
 	@Override
 	public void mostrarTodosLosHechizos() {
 		// mostrar todos los hechizos
@@ -67,7 +73,9 @@ public class AnalistaImple implements Analista {
 		}
 
 	}
-
+    /**
+     * Metodo para mostrar la lista de todos los magos 
+     */
 	@Override
 	public void mostrarTodosLosMagos() {
 		// mostrar todos los magos
@@ -76,7 +84,10 @@ public class AnalistaImple implements Analista {
 
 		}
 
-	}
+	} 
+	/**
+	 * Metodo para mostrar la lista de los hechizos con su puntaje
+	 */
 
 	@Override
 	public void mostrarHechizosConPuntuacion() {
@@ -91,7 +102,9 @@ public class AnalistaImple implements Analista {
 		}
 
 	}
-
+    /**
+     * Metodo para mostrar la lista de los magos con sus puntaciones
+     */
 	@Override
 	public void mostrarMagosConPuntuaciones() {
 		System.out.println("Mostrando Magos con puntuacion..");
@@ -106,7 +119,7 @@ public class AnalistaImple implements Analista {
 	}
 
 	/**
-	 * 
+	 * Metodo para ordenar la lista de Hechizos usando el metodo burbuja
 	 * @param listaHechizos
 	 * @return
 	 */
@@ -127,7 +140,11 @@ public class AnalistaImple implements Analista {
 		}
 		return listaHechizos;
 	}
-
+    /**
+     * Meotodo para ordenar la lista de los magos por medio del metodo burbuja
+     * @param listaMagos
+     * @return
+     */
 	public ArrayList<Mago> ordenamiendoBurbujaMago(ArrayList<Mago> listaMagos) {
 
 		for (int a = 0; a < listaMagos.size() - 1; a++) {

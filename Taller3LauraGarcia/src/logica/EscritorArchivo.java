@@ -15,7 +15,7 @@ public class EscritorArchivo {
 	
 	
    /**
-    *  
+    *  Metodo para sobreescribir el archivo txt y guardar el nuevo mago
     * @param nombreArchivo
     * @param magos
     */
@@ -49,7 +49,7 @@ public class EscritorArchivo {
 	}
 	
 	/**
-	 * 
+	 * Metodo para sobreescribir el archivo txt y guardar un nuevo hechizo
 	 * @param nombreArchivo
 	 * @param listaHechizos
 	 */

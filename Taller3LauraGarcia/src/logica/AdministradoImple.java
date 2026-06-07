@@ -20,7 +20,9 @@ public class AdministradoImple  implements Administrador {
 	
 	
 	
-
+    /**
+     * Metodo para agregar un mago
+     */
 	@Override
 	public void agregarMago() {
 	ArrayList<Hechizo> listaHechizos = new ArrayList<Hechizo>();	
@@ -60,7 +62,9 @@ public class AdministradoImple  implements Administrador {
 		
 	}
 	}
-  
+    /**
+     * Metodo para modificar un mago
+     */
 	@Override
 	public void modificarMago() {
 		Scanner teclado = new Scanner(System.in);  
@@ -85,7 +89,9 @@ public class AdministradoImple  implements Administrador {
 		}
 		}
 	
-
+    /**
+     * Metodo para eliminar un mago
+     */
 	@Override
 	public void eliminarMago() {
 		Scanner teclado = new Scanner(System.in);  
@@ -105,7 +111,9 @@ public class AdministradoImple  implements Administrador {
 		
 		
 	}
-
+    /**
+     * Metodo para agregar un hechizo
+     */
 	@Override
 	public void agregarHechizo() {
 		
@@ -165,7 +173,9 @@ public class AdministradoImple  implements Administrador {
 		
 		
 	}
-
+    /**
+     * Metodo para modificar un hechizo 
+     */
 	@Override
 	public void modificarHechizo() {
 		Scanner teclado = new Scanner(System.in);  
@@ -195,7 +205,9 @@ public class AdministradoImple  implements Administrador {
 	  
 		
 	}
-
+    /**
+     * Metodo para eliminar un hechizo
+     */
 	@Override
 	public void eliminarHechizo() {
 		Scanner teclado = new Scanner(System.in);  
@@ -222,7 +234,7 @@ public class AdministradoImple  implements Administrador {
 		
 	}
     /**
-     * 
+     * Metodo para validar la entrada de un dato de forma numerica
      * @param teclado
      * @return
      * @throws NumberFormatException
@@ -252,7 +264,7 @@ public class AdministradoImple  implements Administrador {
 	}
     
 	/**
-	 * 
+	 * Metodo para validar la entrada por teclado de un caracter usando lenguaje regular (REGEX) 
 	 * @param teclado
 	 * @return
 	 * @throws IllegalArgumentException
@@ -279,7 +291,12 @@ public class AdministradoImple  implements Administrador {
 				return opcion; 
 	}
 	
-	
+	/**
+	 * Metodo para buscar un hechizo por nombre
+	 * @param nombreHechizo
+	 * @param listaHechizos
+	 * @return
+	 */
 	private Hechizo buscarHechizoPorNombre(String nombreHechizo, ArrayList<Hechizo>  listaHechizos) {
 		Hechizo hechizoActual=null;
 		for (int i=0; i< listaHechizos.size();i++) {
